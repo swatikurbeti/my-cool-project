@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eGov - Digital Transformation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: #1a1a1a;
+    }
+    a {
+      text-decoration: none;
+    }
+    .nav-link {
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #f6961e !important;
+    }
+    .btn-primary-custom {
+      background-color: #f6961e;
+      color: #fff;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .btn-primary-custom:hover {
+      background-color: #d97f0f;
+      transform: translateY(-2px);
+    }
+    .btn-outline-custom {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-outline-custom:hover {
+      background: #fff;
+      color: #1a1a1a;
+    }
+    .stat-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 24px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+    .feature-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.13);
+    }
+    .category-btn {
+      background: transparent;
+      border: 2px solid #e0e0e0;
+      border-radius: 20px;
+      padding: 6px 18px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .category-btn:hover,
+    .category-btn.active {
+      background: #0057a8;
+      color: #fff;
+      border-color: #0057a8;
+    }
+    .supporter-logo {
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+      filter: grayscale(100%);
+    }
+    .supporter-logo:hover {
+      opacity: 1;
+      filter: grayscale(0%);
+    }
+    footer a:hover {
+      color: #f6961e !important;
+    }
+    .hero-section {
+      background: linear-gradient(135deg, #e8f4ff 0%, #f0f8ff 100%);
+      min-height: 520px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 400px;
+      height: 400px;
+      background: rgba(0, 87, 168, 0.06);
+      border-radius: 50%;
+    }
+    .stats-strip {
+      background: #1a2e4a;
+      color: #fff;
+    }
+    .blue-card {
+      background: #0057a8;
+      color: #fff;
+      border-radius: 10px;
+      padding: 28px;
+      transition: transform 0.3s;
+    }
+    .blue-card:hover {
+      transform: scale(1.03);
+    }
+    .digit-section {
+      background: #0b1e3d;
+      color: #fff;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .section-subtitle {
+      color: #f6961e;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav style="background:#fff; box-shadow: 0 2px 10px rgba(0,0,0,0.08);" class="navbar navbar-expand-lg sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <span style="color:#f6961e; font-weight:800; font-size:1.4rem;">e</span><span style="color:#0057a8; font-weight:800; font-size:1.4rem;">GOV</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-2">
+          <li class="nav-item"><a class="nav-link" style="color:#333; font-weight:500;" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" style="color:#333; font-weight:500;" href="#">Products</a></li>
+          <li class="nav-item"><a class="nav-link" style="color:#333; font-weight:500;" href="#">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" style="color:#333; font-weight:500;" href="#">Careers</a></li>
+          <li class="nav-item"><a class="nav-link" style="color:#333; font-weight:500;" href="#">Contact</a></li>
+        </ul>
+        <a href="#" class="btn btn-primary-custom ms-3">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section d-flex align-items-center">
+    <div class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <p style="color:#0057a8; font-weight:600; font-size:14px; letter-spacing:1px; text-transform:uppercase;">20 years of digital transformation</p>
+          <h1 class="section-title mt-2 mb-3">
+            Transforming Public Service Delivery.<br />
+            <span style="color:#0057a8;">It's possible.</span>
+          </h1>
+          <p style="color:#555; font-size:1.05rem; line-height:1.7;" class="mb-4">
+            We build technology solutions that help governments deliver services efficiently and transparently to over a billion citizens across India.
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="#" class="btn btn-primary-custom">Explore Products</a>
+            <a href="#" style="background:#0057a8; color:#fff; border:none; padding:10px 22px; border-radius:4px; font-weight:600; transition: all 0.3s;" class="btn btn-outline-custom">Learn More</a>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&auto=format&fit=crop" alt="Hero" style="width:100%; border-radius:12px; box-shadow: 0 16px 40px rgba(0,87,168,0.15);" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section class="stats-strip py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 style="font-size:2.8rem; font-weight:800; color:#fff;">1,000,000,100+</h2>
+        <p style="color:#94b8d8;">Citizens impacted through our platforms</p>
+      </div>
+      <div class="row text-center g-4">
+        <div class="col-6 col-md-3">
+          <h3 style="color:#f6961e; font-weight:700; font-size:1.8rem;">1 Billion+</h3>
+          <p style="color:#94b8d8; font-size:14px;">Citizens Served</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h3 style="color:#f6961e; font-weight:700; font-size:1.8rem;">50+</h3>
+          <p style="color:#94b8d8; font-size:14px;">Government Partners</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h3 style="color:#f6961e; font-weight:700; font-size:1.8rem;">210+</h3>
+          <p style="color:#94b8d8; font-size:14px;">Products Deployed</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h3 style="color:#f6961e; font-weight:700; font-size:1.8rem;">20 Yrs</h3>
+          <p style="color:#94b8d8; font-size:14px;">Of Experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT / FEATURES SECTION -->
+  <section style="background:#f7f9fc;" class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5">
+          <p class="section-subtitle">Our Approach</p>
+          <h2 class="section-title mt-2 mb-3">Big problems need bold approaches</h2>
+          <ul style="list-style:none; padding:0;" class="mt-3">
+            <li style="padding:10px 0; border-bottom:1px solid #e5e5e5; color:#444; display:flex; align-items:center; gap:10px;">
+              <span style="background:#0057a8; color:#fff; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:13px; flex-shrink:0;">✓</span>
+              Scalable Technology Platforms
+            </li>
+            <li style="padding:10px 0; border-bottom:1px solid #e5e5e5; color:#444; display:flex; align-items:center; gap:10px;">
+              <span style="background:#0057a8; color:#fff; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:13px; flex-shrink:0;">✓</span>
+              Open Source & Interoperable
+            </li>
+            <li style="padding:10px 0; color:#444; display:flex; align-items:center; gap:10px;">
+              <span style="background:#0057a8; color:#fff; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:13px; flex-shrink:0;">✓</span>
+              Citizen-Centered Design
+            </li>
+          </ul>
+          <a href="#" class="btn btn-primary-custom mt-4">Read More</a>
+        </div>
+        <div class="col-lg-7">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="blue-card">
+                <h3 style="font-size:2.5rem; font-weight:800;">210+</h3>
+                <p style="font-size:14px; opacity:0.85; margin-top:6px;">Products and platforms built for government use across India</p>
+                <a href="#" style="color:#f6961e; font-weight:600; font-size:14px;">Explore →</a>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="blue-card" style="background:#e8f0fa; color:#1a1a1a;">
+                <h3 style="font-size:2.5rem; font-weight:800; color:#0057a8;">2 Bn</h3>
+                <p style="font-size:14px; opacity:0.75; margin-top:6px;">Transactions processed annually through eGov platforms</p>
+                <a href="#" style="color:#f6961e; font-weight:600; font-size:14px;">Learn More →</a>
+              </div>
+            </div>
+            <div class="col-12">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop" alt="Feature" style="width:100%; border-radius:10px;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION - Sustaining Change -->
+  <section style="background:#fff;" class="py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <p style="color:#0057a8; font-size:13px; text-transform:uppercase; font-weight:600; letter-spacing:1px;">20 years of reimagining</p>
+        <h2 class="section-title">For citizens and <span style="color:#f6961e;">sustaining change</span></h2>
+        <p style="color:#666; max-width:600px; margin:12px auto 0; font-size:1rem; line-height:1.7;">
+          Our journey of two decades has been about continuously innovating to make public services more accessible, transparent and effective for every citizen.
+        </p>
+      </div>
+      <div class="row g-4 mt-2">
+        <div class="col-md-6">
+          <div class="feature-card" style="border:1px solid #eee;">
+            <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&auto=format&fit=crop" alt="Story 1" style="width:100%;" />
+            <div style="padding:20px;">
+              <h5 style="font-weight:700; color:#1a1a1a;">Empowering Urban Local Bodies</h5>
+              <p style="color:#666; font-size:14px; margin-top:6px;">How DIGIT helped municipalities serve citizens better across 300+ cities.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="feature-card" style="border:1px solid #eee;">
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&auto=format&fit=crop" alt="Story 2" style="width:100%;" />
+            <div style="padding:20px;">
+              <h5 style="font-weight:700; color:#1a1a1a;">Digitizing Revenue Collections</h5>
+              <p style="color:#666; font-size:14px; margin-top:6px;">Transparent property tax and utility payment systems built for scale.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIGIT CTA SECTION -->
+  <section class="digit-section py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <p style="color:#f6961e; font-weight:600; font-size:14px; text-transform:uppercase; letter-spacing:1px;">★ DIGIT</p>
+          <h2 class="section-title mt-2 mb-3">Our open-source technology-for-good platform</h2>
+          <p style="color:#94b8d8; font-size:1rem; line-height:1.7; max-width:480px;">
+            DIGIT is a scalable, configurable, and open-source platform that enables governments to deliver services digitally. Built for billions, designed for everyone.
+          </p>
+          <a href="#" class="btn btn-primary-custom mt-4">Explore DIGIT</a>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop" alt="DIGIT Platform" style="width:100%; border-radius:12px;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST AT EGOV SECTION -->
+  <section style="background:#f7f9fc;" class="py-5">
+    <div class="container">
+      <h2 class="section-title mb-2">Latest at <span style="color:#0057a8;">eGov</span></h2>
+      <div class="d-flex flex-wrap gap-2 mb-4 mt-3">
+        <button class="category-btn active">All News</button>
+        <button class="category-btn">Events</button>
+        <button class="category-btn">Announcements</button>
+        <button class="category-btn">Blogs</button>
+        <button class="category-btn">Press Release</button>
+        <button class="category-btn">Publications</button>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-card" style="border:1px solid #e5e5e5;">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&auto=format&fit=crop" alt="News 1" style="width:100%;" />
+            <div style="padding:18px;">
+              <span style="background:#e8f0fa; color:#0057a8; font-size:12px; padding:3px 10px; border-radius:12px; font-weight:600;">Announcement</span>
+              <h6 style="font-weight:700; margin-top:10px; line-height:1.5;">eGov Foundation wins Digital India Award 2024 for innovation in governance</h6>
+              <p style="color:#888; font-size:13px; margin-top:6px;">Feb 18, 2025</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card" style="border:1px solid #e5e5e5;">
+            <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&auto=format&fit=crop" alt="News 2" style="width:100%;" />
+            <div style="padding:18px;">
+              <span style="background:#fff4e5; color:#d97f0f; font-size:12px; padding:3px 10px; border-radius:12px; font-weight:600;">Event</span>
+              <h6 style="font-weight:700; margin-top:10px; line-height:1.5;">Urban Governance Summit 2025: Technology as an enabler of citizen services</h6>
+              <p style="color:#888; font-size:13px; margin-top:6px;">Mar 5, 2025</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card" style="border:1px solid #e5e5e5;">
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&auto=format&fit=crop" alt="News 3" style="width:100%;" />
+            <div style="padding:18px;">
+              <span style="background:#e6f9f0; color:#1a7f4b; font-size:12px; padding:3px 10px; border-radius:12px; font-weight:600;">Blog</span>
+              <h6 style="font-weight:700; margin-top:10px; line-height:1.5;">How open-source platforms are reshaping public service delivery in India</h6>
+              <p style="color:#888; font-size:13px; margin-top:6px;">Apr 1, 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="#" class="btn" style="border:2px solid #0057a8; color:#0057a8; padding:10px 30px; border-radius:4px; font-weight:600; transition: all 0.3s;">View All</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORTERS SECTION -->
+  <section style="background:#fff;" class="py-5">
+    <div class="container">
+      <h4 style="font-weight:700; color:#333; margin-bottom:32px;">Our Supporters</h4>
+      <div class="row align-items-center g-4">
+        <div class="col-6 col-md-3 text-center">
+          <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=280&auto=format&fit=crop" alt="Omidyar" class="supporter-logo" style="max-width:140px; border-radius:6px;" />
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <img src="https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?w=280&auto=format&fit=crop" alt="Bill Gates" class="supporter-logo" style="max-width:140px; border-radius:6px;" />
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=280&auto=format&fit=crop" alt="Data Trusts" class="supporter-logo" style="max-width:140px; border-radius:6px;" />
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=280&auto=format&fit=crop" alt="Global Fund" class="supporter-logo" style="max-width:140px; border-radius:6px;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0b1e3d; color:#94b8d8;" class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="mb-3">
+            <span style="color:#f6961e; font-weight:800; font-size:1.4rem;">e</span><span style="color:#fff; font-weight:800; font-size:1.4rem;">GOV</span>
+          </div>
+          <p style="font-size:14px; line-height:1.7; max-width:280px;">
+            Transforming public service delivery through technology. Building a more transparent, efficient, and citizen-centric government.
+          </p>
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" style="color:#94b8d8; font-size:18px; transition:color 0.3s;">🐦</a>
+            <a href="#" style="color:#94b8d8; font-size:18px; transition:color 0.3s;">💼</a>
+            <a href="#" style="color:#94b8d8; font-size:18px; transition:color 0.3s;">📘</a>
+            <a href="#" style="color:#94b8d8; font-size:18px; transition:color 0.3s;">▶️</a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 style="color:#fff; font-weight:700; margin-bottom:16px;">Quick Links</h6>
+          <ul style="list-style:none; padding:0;">
+            <li class="mb-2"><a href="#" style="color:#94b8d8; font-size:14px; transition:color 0.3s;">Home</a></li>
+            <li class="mb-2"><a href="#" style="color:#94b8d8; font-size:14px; transition:color 0.3s;">Products</a></li>
+            <li class="mb-2"><a href="#" style="color:#94b8d8; font-size:14px; transition:color 0.3s;">About Us</a></li>
+            <li class="mb-2"><a href="#" style="color:#94b8d8; font-size:14px; transition:color 0.3s;">Careers</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h6 style="color:#fff; font-weight:700; margin-bottom:16px;">Our Products</h6>
+          <ul style="list-style:none; padding:0;">
+            <li class="mb-2"><a href="#" style="color:#94b8d8; font-size:14px; transition:color 0.3s;">DIGIT Platform</a></li>
+            <li class="mb-2"><a href="#" style="color:#94b8d8; font-size:14px; transition:color 0.3s;">Urban Services</a></li>
+            <li class="mb-2"><a href="#" style="color:#94b8d8; font-size:14px; transition:color 0.3s;">Health Stack</a></li>
+            <li class="mb-2"><a href="#" style="color:#94b8d8; font-size:14px; transition:color 0.3s;">PUCAR</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h6 style="color:#fff; font-weight:700; margin-bottom:16px;">Subscribe Now</h6>
+          <p style="font-size:14px; margin-bottom:12px;">Stay updated with the latest news and developments.</p>
+          <div style="display:flex; border-radius:4px; overflow:hidden;">
+            <input type="email" placeholder="Your email" style="flex:1; padding:10px 14px; border:none; font-family:'DM Sans',sans-serif; font-size:14px; outline:none;" />
+            <button style="background:#f6961e; border:none; padding:10px 14px; color:#fff; cursor:pointer; transition:background 0.3s;" onmouseover="this.style.background='#d97f0f'" onmouseout="this.style.background='#f6961e'">→</button>
+          </div>
+        </div>
+      </div>
+      <hr style="border-color:#1e3a6e; margin:32px 0;" />
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <p style="font-size:13px; margin:0;">© 2025 eGov Foundation. All rights reserved.</p>
+        <div class="d-flex gap-3">
+          <a href="#" style="color:#94b8d8; font-size:13px;">Privacy Policy</a>
+          <a href="#" style="color:#94b8d8; font-size:13px;">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Category button toggle
+    var categoryBtns = document.querySelectorAll('.category-btn');
+    categoryBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        categoryBtns.forEach(function(b) { b.classList.remove('active'); });
+        this.classList.add('active');
+      });
+    });
+
+    // Footer links hover color
+    var footerLinks = document.querySelectorAll('footer a');
+    footerLinks.forEach(function(link) {
+      link.addEventListener('mouseover', function() {
+        this.style.color = '#f6961e';
+      });
+      link.addEventListener('mouseout', function() {
+        this.style.color = '#94b8d8';
+      });
+    });
+  </script>
+</body>
+</html>
